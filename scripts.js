@@ -5,14 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // 1. 加载数据
   loadPublications();
   
-  // 2. 绑定点击事件（不再依赖 HTML 里的 onclick）
+  // 2. 绑定点击事件
   const pubHeader = document.getElementById('publications-header');
   if (pubHeader) {
     pubHeader.addEventListener('click', function() {
       const content = document.getElementById('publications-content');
       const icon = document.getElementById('toggle-icon');
-      
-      // 检查当前状态（处理首次点击可能不灵的情况）
       const isHidden = content.style.display === "none" || content.style.display === "";
 
       if (isHidden) {
@@ -40,7 +38,17 @@ function loadPublications() {
     })
     .then(data => {
       allPublications = data.publications;
-      renderPublications(); // 渲染数据
+      
+      // --- 新增：排序逻辑 ---
+      // 从 venue 字符串中提取 4 位数字年份（如 2026），并按从大到小排序
+      allPublications.sort((a, b) => {
+        const yearA = parseInt(a.venue.match(/20\d{2}/)) || 0;
+        const yearB = parseInt(b.venue.match(/20\d{2}/)) || 0;
+        return yearB - yearA; // 降序排列
+      });
+      // ----------------------
+
+      renderPublications(); 
     })
     .catch(error => {
       console.error('Error:', error);
@@ -56,10 +64,8 @@ function renderPublications() {
     'Preprint': document.getElementById('preprint-container')
   };
 
-  // 清空现有内容
   Object.values(containers).forEach(c => { if(c) c.innerHTML = ''; });
 
-  // 填充数据
   allPublications.forEach(pub => {
     const pubElement = createPublicationElement(pub);
     const category = pub.topic;
@@ -68,11 +74,12 @@ function renderPublications() {
     }
   });
 
-  // 如果某个分类没论文，隐藏标题
   Object.keys(containers).forEach(key => {
     const heading = containers[key]?.previousElementSibling;
     if (heading && containers[key].children.length === 0) {
       heading.style.display = 'none';
+    } else {
+      heading.style.display = 'block';
     }
   });
 }
@@ -81,7 +88,6 @@ function createPublicationElement(publication) {
   const pubItem = document.createElement('div');
   pubItem.className = 'publication-item';
   
-  // 组装 HTML 内容
   let linksHTML = '';
   if (publication.links) {
     Object.entries(publication.links).forEach(([type, url]) => {
