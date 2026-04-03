@@ -1,9 +1,31 @@
-// Global variables
+// 全局变量，存储论文数据
 let allPublications = [];
 
 document.addEventListener('DOMContentLoaded', function() {
+  // 1. 加载数据
   loadPublications();
   
+  // 2. 绑定点击事件（不再依赖 HTML 里的 onclick）
+  const pubHeader = document.getElementById('publications-header');
+  if (pubHeader) {
+    pubHeader.addEventListener('click', function() {
+      const content = document.getElementById('publications-content');
+      const icon = document.getElementById('toggle-icon');
+      
+      // 检查当前状态（处理首次点击可能不灵的情况）
+      const isHidden = content.style.display === "none" || content.style.display === "";
+
+      if (isHidden) {
+        content.style.display = "block";
+        if (icon) icon.style.transform = "rotate(90deg)";
+      } else {
+        content.style.display = "none";
+        if (icon) icon.style.transform = "rotate(0deg)";
+      }
+    });
+  }
+
+  // 3. 初始动画延迟
   const sections = document.querySelectorAll('section');
   sections.forEach((section, index) => {
     section.style.animationDelay = `${index * 0.1}s`;
@@ -12,31 +34,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadPublications() {
   fetch('publications.json')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error('JSON load failed');
+      return response.json();
+    })
     .then(data => {
       allPublications = data.publications;
-      // 页面加载时就渲染好，但容器是隐藏的
-      renderPublications();
+      renderPublications(); // 渲染数据
     })
     .catch(error => {
-      console.error('Error loading publications:', error);
-      document.getElementById('publications-sections').innerHTML = `Error loading publications.`;
+      console.error('Error:', error);
+      const container = document.getElementById('publications-sections');
+      if (container) container.innerHTML = "Error loading publications.";
     });
-}
-
-// 修改后的切换逻辑：只控制展开和收起
-function togglePublications() {
-  const content = document.getElementById('publications-content');
-  const icon = document.getElementById('toggle-icon');
-  const isHidden = content.style.display === "none";
-
-  if (isHidden) {
-    content.style.display = "block";
-    icon.style.transform = "rotate(90deg)"; // 箭头向下
-  } else {
-    content.style.display = "none";
-    icon.style.transform = "rotate(0deg)";  // 箭头向右
-  }
 }
 
 function renderPublications() {
@@ -46,27 +56,23 @@ function renderPublications() {
     'Preprint': document.getElementById('preprint-container')
   };
 
-  Object.values(containers).forEach(container => {
-    if (container) container.innerHTML = '';
-  });
+  // 清空现有内容
+  Object.values(containers).forEach(c => { if(c) c.innerHTML = ''; });
 
-  // 不再过滤 selected，直接展示所有
-  allPublications.forEach(publication => {
-    const pubElement = createPublicationElement(publication);
-    const category = publication.topic;
-    
+  // 填充数据
+  allPublications.forEach(pub => {
+    const pubElement = createPublicationElement(pub);
+    const category = pub.topic;
     if (containers[category]) {
       containers[category].appendChild(pubElement);
     }
   });
 
-  // 隐藏没有内容的分类标题
+  // 如果某个分类没论文，隐藏标题
   Object.keys(containers).forEach(key => {
-    const heading = containers[key].previousElementSibling;
-    if (containers[key].children.length === 0) {
+    const heading = containers[key]?.previousElementSibling;
+    if (heading && containers[key].children.length === 0) {
       heading.style.display = 'none';
-    } else {
-      heading.style.display = 'block';
     }
   });
 }
@@ -75,51 +81,26 @@ function createPublicationElement(publication) {
   const pubItem = document.createElement('div');
   pubItem.className = 'publication-item';
   
-  const content = document.createElement('div');
-  content.className = 'pub-content';
-  
-  const title = document.createElement('div');
-  title.className = 'pub-title';
-  title.textContent = publication.title;
-  content.appendChild(title);
-  
-  const authors = document.createElement('div');
-  authors.className = 'pub-authors';
-  authors.textContent = publication.authors.join(', ');
-  content.appendChild(authors);
-  
-  const venueContainer = document.createElement('div');
-  venueContainer.className = 'pub-venue-container';
-  
-  const venue = document.createElement('div');
-  venue.className = 'pub-venue';
-  venue.textContent = publication.venue;
-  venueContainer.appendChild(venue);
-  
-  if (publication.award) {
-    const award = document.createElement('div');
-    award.className = 'pub-award';
-    award.textContent = publication.award;
-    venueContainer.appendChild(award);
-  }
-  
-  content.appendChild(venueContainer);
-  
+  // 组装 HTML 内容
+  let linksHTML = '';
   if (publication.links) {
-    const links = document.createElement('div');
-    links.className = 'pub-links';
     Object.entries(publication.links).forEach(([type, url]) => {
       if (url && url !== "#") {
-        const link = document.createElement('a');
-        link.href = url;
-        link.textContent = `[${type.toUpperCase()}]`;
-        link.style.marginRight = "10px";
-        links.appendChild(link);
+        linksHTML += `<a href="${url}" style="margin-right:10px;">[${type.toUpperCase()}]</a>`;
       }
     });
-    content.appendChild(links);
   }
-  
-  pubItem.appendChild(content);
+
+  pubItem.innerHTML = `
+    <div class="pub-content">
+      <div class="pub-title">${publication.title}</div>
+      <div class="pub-authors">${publication.authors.join(', ')}</div>
+      <div class="pub-venue-container">
+        <div class="pub-venue">${publication.venue}</div>
+        ${publication.award ? `<div class="pub-award">${publication.award}</div>` : ''}
+      </div>
+      <div class="pub-links">${linksHTML}</div>
+    </div>
+  `;
   return pubItem;
 }
