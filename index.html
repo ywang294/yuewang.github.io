@@ -64,22 +64,26 @@
             </div>
         </section>
 
-        <section id="publications">
-    <div class="publications-header">
-        <h2 id="toggle-header">Publications</h2>
-        <button id="toggle-publications" class="toggle-publications">Show All</button>
+       <section id="publications">
+    <div class="publications-header" onclick="togglePublications()" style="cursor: pointer;">
+        <h2 id="toggle-header">
+            Publications 
+            <i id="toggle-icon" class="fas fa-chevron-right" style="font-size: 0.8em; margin-left: 10px; transition: transform 0.3s;"></i>
+        </h2>
+        <span style="font-size: 0.9rem; color: #888;">(Click to expand)</span>
     </div>
     
-    <div id="publications-sections">
-        <h3 class="pub-category-title">Preprints</h3>
-        <div id="preprint-container" class="category-container"></div>
-        
-        <h3 class="pub-category-title">Conferences</h3>
-        <div id="conference-container" class="category-container"></div>
+    <div id="publications-content" style="display: none; margin-top: 20px;">
+        <div id="publications-sections">
+            <h3 class="pub-category-title">Conferences</h3>
+            <div id="conference-container" class="category-container"></div>
 
-        <h3 class="pub-category-title">Journals</h3>
-        <div id="journal-container" class="category-container"></div>
+            <h3 class="pub-category-title">Journals</h3>
+            <div id="journal-container" class="category-container"></div>
 
+            <h3 class="pub-category-title">Preprints</h3>
+            <div id="preprint-container" class="category-container"></div>
+        </div>
     </div>
 </section>
 
