@@ -2,515 +2,178 @@
   "publications": [
     {
       "title": "Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interactions",
-      "authors": [
-        "Zain Ulabedeen Farhat*",
-        "Debamita Ghosh*",
-        "George K. Atia",
-        "Yue Wang"
-      ],
+      "authors": ["Zain Ulabedeen Farhat*", "Debamita Ghosh*", "George K. Atia", "Yue Wang"],
       "venue": "International Conference on Learning Representations (ICLR), 2026",
-      "thumbnail": "",
       "selected": 1,
       "award": "",
+      "topic": "Conference",
       "links": {
         "pdf": "https://openreview.net/forum?id=hIBMCDOwMI"
       }
     },
     {
       "title": "ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning",
-      "authors": [
-        "Debamita Ghosh",
-        "George K. Atia",
-        "Yue Wang"
-      ],
+      "authors": ["Debamita Ghosh", "George K. Atia", "Yue Wang"],
       "venue": "AAAI Conference on Artificial Intelligence (AAAI), 2026",
-      "thumbnail": "",
       "selected": 1,
       "award": "",
+      "topic": "Conference",
       "links": {
         "pdf": "https://arxiv.org/abs/2508.03768"
       }
     },
     {
       "title": "Stabilizing Policy Gradient Methods via Reward Profiling",
-      "authors": [
-        "Shihab Ahmed",
-        "El houcine Bergou",
-        "Aritra Dutta",
-        "Yue Wang"
-      ],
+      "authors": ["Shihab Ahmed", "El houcine Bergou", "Aritra Dutta", "Yue Wang"],
       "venue": "AAAI Conference on Artificial Intelligence (AAAI), 2026",
-      "thumbnail": "",
       "selected": 1,
       "award": "Oral Presentation",
+      "topic": "Conference",
       "links": {
         "pdf": "https://arxiv.org/abs/2511.16629"
       }
     },
     {
       "title": "A Reduction Framework for Distributionally Robust Reinforcement Learning under Average Reward",
-      "authors": [
-        "Z. Roch",
-        "G. Atia",
-        "Y. Wang"
-      ],
+      "authors": ["Z. Roch", "G. Atia", "Y. Wang"],
       "venue": "International Conference on Machine Learning (ICML), 2025",
-      "thumbnail": "",
       "selected": 1,
       "award": "",
+      "topic": "Conference",
       "links": {
         "pdf": "https://openreview.net/pdf?id=B5p7bjTI8v"
       }
     },
     {
       "title": "Model-Free Offline Reinforcement Learning with Enhanced Robustness",
-      "authors": [
-        "C. Zhang",
-        "Z. Farhat",
-        "G. Atia",
-        "Y. Wang"
-      ],
+      "authors": ["C. Zhang", "Z. Farhat", "G. Atia", "Y. Wang"],
       "venue": "International Conference on Learning Representations (ICLR), 2025",
-      "thumbnail": "",
       "selected": 1,
       "award": "",
+      "topic": "Conference",
       "links": {
         "pdf": "https://openreview.net/pdf?id=QyVLJ7EnAC"
       }
     },
     {
       "title": "A Unified Principle of Pessimism for Offline Reinforcement Learning under Model Mismatch",
-      "authors": [
-        "Y. Wang",
-        "Z. Sun",
-        "S. Zou"
-      ],
+      "authors": ["Y. Wang", "Z. Sun", "S. Zou"],
       "venue": "Conference on Neural Information Processing Systems (NeurIPS), 2024",
-      "thumbnail": "",
       "selected": 1,
       "award": "",
+      "topic": "Conference",
       "links": {
         "pdf": "https://openreview.net/pdf?id=cBY66CKEbq"
       }
     },
     {
-      "title": "Non-Asymptotic Analysis for Single-Loop (Natural) Actor-Critic With Compatible Function Approximation",
-      "authors": [
-        "Y. Wang",
-        "Y. Wang",
-        "Y. Zhou",
-        "S. Zou"
-      ],
-      "venue": "International Conference on Machine Learning (ICML), 2024",
-      "thumbnail": "",
-      "selected": 1,
-      "award": "",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2406.01762"
-      }
-    },
-    {
       "title": "Robust Average-Reward Markov Decision Processes",
-      "authors": [
-        "Y. Wang",
-        "A. Velasquez",
-        "G. Atia",
-        "A. Prater-Bennette",
-        "S. Zou"
-      ],
+      "authors": ["Y. Wang", "A. Velasquez", "G. Atia", "A. Prater-Bennette", "S. Zou"],
       "venue": "AAAI Conference on Artificial Intelligence (AAAI), 2023",
-      "thumbnail": "",
       "selected": 1,
       "award": "Distinguished Award",
+      "topic": "Conference",
       "links": {
         "pdf": "https://arxiv.org/pdf/2301.00858.pdf"
       }
     },
     {
-      "title": "Online Robust Reinforcement Learning with Model Uncertainty",
-      "authors": [
-        "Y. Wang",
-        "S. Zou"
-      ],
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS), 2021",
-      "thumbnail": "",
+      "title": "Achieving the Asymptotically Minimax Optimal Sample Complexity of Offline Reinforcement Learning: A DRO-Based Approach",
+      "authors": ["Y. Wang", "J. Xiong", "S. Zou"],
+      "venue": "Transactions on Machine Learning Research (TMLR), 2024",
       "selected": 1,
       "award": "",
-      "links": {
-        "pdf": "https://proceedings.neurips.cc/paper/2021/file/3a4496776767aaa99f9804d0905fe584-Paper.pdf"
-      }
-    },
-    {
-      "title": "CADENT: Gated Hybrid Distillation for Sample-Efficient Transfer in Reinforcement Learning",
-      "authors": [
-        "M. Alinejad",
-        "Y. Wang",
-        "G. Atia"
-      ],
-      "venue": "International Conference on Artificial Intelligence and Statistics (AISTATS), 2026",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "#"
-      }
-    },
-    {
-      "title": "Dynamic Automaton Refinement and Planning for Non-Markovian RL",
-      "authors": [
-        "M. Alinejad",
-        "Y. Wang",
-        "G. Atia"
-      ],
-      "venue": "International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2026",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "#"
-      }
-    },
-    {
-      "title": "Robust Direct Preference Optimization for Offline Learning",
-      "authors": [
-        "Shihab Ahmed",
-        "Zhenyi Wang",
-        "Yue Wang"
-      ],
-      "venue": "AAMAS 2026 (Extended Abstract)",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "#"
-      }
-    },
-    {
-      "title": "Pessimism Principle Can Be Effective: Towards a Framework for Zero-Shot Transfer Reinforcement Learning",
-      "authors": [
-        "C. Zhang",
-        "Z, Jia",
-        "G. Atia",
-        "S. He",
-        "Y. Wang"
-      ],
-      "venue": "International Conference on Machine Learning (ICML), 2025",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://arxiv.org/abs/2505.18447"
-      }
-    },
-    {
-      "title": "Bidirectional End-to-End Framework for Transfer from Abstract Models in Non-Markovian Reinforcement Learning",
-      "authors": [
-        "M. Alinejad",
-        "P. Nwaorgu",
-        "C. Enyioha",
-        "Y. Wang",
-        "A. Velasquez",
-        "G. Atia"
-      ],
-      "venue": "International Conference on Neuro-symbolic Systems (NeuS), 2025",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://neus-2025.github.io/files/papers/paper_84.pdf"
-      }
-    },
-    {
-      "title": "Hybrid Offline Passive Grammatical Inference and Online Planning for Non-Markovian Tasks",
-      "authors": [
-        "M. Alinejad",
-        "A. Velasquez",
-        "Y. Wang",
-        "G. Atia"
-      ],
-      "venue": "International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2025",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://ieeexplore.ieee.org/abstract/document/10889467"
-      }
-    },
-    {
-      "title": "Model-Free Robust Reinforcement Learning with Sample Complexity Analysis",
-      "authors": [
-        "Y. Wang",
-        "S. Zou",
-        "Y. Wang"
-      ],
-      "venue": "Conference on Uncertainty in Artificial Intelligence (UAI), 2024",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2406.17096"
-      }
-    },
-    {
-      "title": "Model-Free Robust Average-Reward Reinforcement Learning",
-      "authors": [
-        "Y. Wang",
-        "A. Velasquez",
-        "G. Atia",
-        "A. Prater-Bennette",
-        "S. Zou"
-      ],
-      "venue": "International Conference on Machine Learning (ICML), 2023",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2305.10504.pdf"
-      }
-    },
-    {
-      "title": "A Robust and Constrained Multi-Agent Reinforcement Learning Method for Electric Vehicle AMoD Systems",
-      "authors": [
-        "S. He",
-        "Y. Wang",
-        "S. Han",
-        "S. Zou",
-        "F. Miao"
-      ],
-      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2023",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2209.08230.pdf"
-      }
-    },
-    {
-      "title": "Data-Driven Robust Multi-Agent Reinforcement Learning",
-      "authors": [
-        "Y. Wang",
-        "Y. Wang",
-        "Y. Zhou",
-        "A. Velasquez",
-        "S. Zou"
-      ],
-      "venue": "IEEE International Workshop on MACHINE LEARNING FOR SIGNAL PROCESSING (MLSP), 2022",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://ieeexplore.ieee.org/document/9943500"
-      }
-    },
-    {
-      "title": "Policy Gradient Method for Robust Reinforcement Learning",
-      "authors": [
-        "Y. Wang",
-        "S. Zou"
-      ],
-      "venue": "International Conference on Machine Learning (ICML), 2022",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://proceedings.mlr.press/v162/wang22at/wang22at.pdf"
-      }
-    },
-    {
-      "title": "Non-Asymptotic Analysis for Two Time-scale TDC with General Smooth Function Approximation",
-      "authors": [
-        "Y. Wang",
-        "Y. Zhou",
-        "S. Zou"
-      ],
-      "venue": "Conference on Neural Information Processing Systems (NeurIPS), 2021",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://proceedings.neurips.cc/paper/2021/file/50e207ab6946b5d78b377ae0144b9e07-Paper.pdf"
-      }
-    },
-    {
-      "title": "Finite-sample Analysis of Greedy-GQ with Linear Function Approximation under Markovian Noise",
-      "authors": [
-        "Y. Wang",
-        "S. Zou"
-      ],
-      "venue": "Conference on Uncertainty in Artificial Intelligence (UAI), 2020",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "http://proceedings.mlr.press/v124/wang20a.html"
-      }
-    },
-    {
-      "title": "Achieving the Asymptotically Minimax Optimal Sample Complexity of Offline Reinforcement Learning: A DRO-Based Approach",
-      "authors": [
-        "Y. Wang",
-        "J. Xiong",
-        "S. Zou"
-      ],
-      "venue": "Transactions on Machine Learning Research, 2024",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
+      "topic": "Journal",
       "links": {
         "pdf": "https://openreview.net/forum?id=Y7FbGcjOuD"
       }
     },
     {
       "title": "Provably Efficient Offline Reinforcement Learning with Trajectory-Wise Reward",
-      "authors": [
-        "T. Xu",
-        "Y. Wang",
-        "S. Zou",
-        "Y. Liang"
-      ],
+      "authors": ["T. Xu", "Y. Wang", "S. Zou", "Y. Liang"],
       "venue": "IEEE Transactions on Information Theory, 2024",
-      "thumbnail": "",
-      "selected": 0,
+      "selected": 1,
       "award": "",
+      "topic": "Journal",
       "links": {
         "pdf": "https://ieeexplore.ieee.org/document/10596317"
       }
     },
     {
       "title": "Finite-Time Error Bounds for Greedy-GQ",
-      "authors": [
-        "Y. Wang",
-        "Y. Zhou",
-        "S. Zou"
-      ],
+      "authors": ["Y. Wang", "Y. Zhou", "S. Zou"],
       "venue": "Machine Learning, Springer, 2024",
-      "thumbnail": "",
-      "selected": 0,
+      "selected": 1,
       "award": "",
+      "topic": "Journal",
       "links": {
         "pdf": "https://arxiv.org/pdf/2209.02555.pdf"
       }
     },
     {
       "title": "Robust Average-Reward Reinforcement Learning",
-      "authors": [
-        "Y. Wang",
-        "A. Velasquez",
-        "G. Atia",
-        "A. Prater-Bennette",
-        "S. Zou"
-      ],
-      "venue": "Journal of Artificial Intelligence Research, 2024",
-      "thumbnail": "",
-      "selected": 0,
+      "authors": ["Y. Wang", "A. Velasquez", "G. Atia", "A. Prater-Bennette", "S. Zou"],
+      "venue": "Journal of Artificial Intelligence Research (JAIR), 2024",
+      "selected": 1,
       "award": "",
+      "topic": "Journal",
       "links": {
         "pdf": "#"
       }
     },
     {
       "title": "Robust Transfer Learning with Side Information",
-      "authors": [
-        "Akram S. Awad",
-        "Shihab Ahmed",
-        "Yue Wang",
-        "George K. Atia"
-      ],
+      "authors": ["Akram S. Awad", "Shihab Ahmed", "Yue Wang", "George K. Atia"],
       "venue": "Preprint, 2026",
-      "thumbnail": "",
-      "selected": 0,
+      "selected": 1,
       "award": "",
+      "topic": "Preprint",
       "links": {
         "pdf": "https://arxiv.org/abs/2603.07921"
       }
     },
     {
       "title": "Scaling Online Distributionally Robust Reinforcement Learning: Sample-Efficient Guarantees with General Function Approximation",
-      "authors": [
-        "Debamita Ghosh",
-        "George K. Atia",
-        "Yue Wang"
-      ],
+      "authors": ["Debamita Ghosh", "George K. Atia", "Yue Wang"],
       "venue": "Preprint, 2025",
-      "thumbnail": "",
-      "selected": 0,
+      "selected": 1,
       "award": "",
+      "topic": "Preprint",
       "links": {
         "pdf": "https://arxiv.org/abs/2512.18957"
       }
     },
     {
       "title": "RLAF: Reinforcement Learning from Automaton Feedback",
-      "authors": [
-        "Mahyar Alinejad",
-        "Alvaro Velasquez",
-        "Yue Wang",
-        "George Atia"
-      ],
+      "authors": ["Mahyar Alinejad", "Alvaro Velasquez", "Yue Wang", "George Atia"],
       "venue": "Preprint, 2025",
-      "thumbnail": "",
       "selected": 0,
       "award": "",
+      "topic": "Preprint",
       "links": {
         "pdf": "https://arxiv.org/abs/2510.15728"
       }
     },
     {
-      "title": "Game-Theoretic Understandings of Multi-Agent Systems with Multiple Objectives",
-      "authors": [
-        "Yue Wang"
-      ],
-      "venue": "Preprint, 2025",
-      "thumbnail": "",
+      "title": "CADENT: Gated Hybrid Distillation for Sample-Efficient Transfer in Reinforcement Learning",
+      "authors": ["M. Alinejad", "Y. Wang", "G. Atia"],
+      "venue": "International Conference on Artificial Intelligence and Statistics (AISTATS), 2026",
       "selected": 0,
       "award": "",
+      "topic": "Conference",
       "links": {
-        "pdf": "https://arxiv.org/abs/2509.23026"
+        "pdf": "#"
       }
     },
     {
-      "title": "Distributionally Robust Markov Games with Average Reward",
-      "authors": [
-        "Zachary Roch",
-        "Yue Wang"
-      ],
-      "venue": "Preprint, 2025",
-      "thumbnail": "",
+      "title": "Non-Asymptotic Analysis for Single-Loop (Natural) Actor-Critic With Compatible Function Approximation",
+      "authors": ["Y. Wang", "Y. Wang", "Y. Zhou", "S. Zou"],
+      "venue": "International Conference on Machine Learning (ICML), 2024",
       "selected": 0,
       "award": "",
+      "topic": "Conference",
       "links": {
-        "pdf": "https://arxiv.org/abs/2508.03136"
-      }
-    },
-    {
-      "title": "A Finite-Sample Analysis of Distributionally Robust Average-Reward Reinforcement Learning",
-      "authors": [
-        "Z. Roch",
-        "C. Zhang",
-        "G. Atia",
-        "Y. Wang"
-      ],
-      "venue": "Preprint, 2025",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://arxiv.org/abs/2505.12462"
-      }
-    },
-    {
-      "title": "Robust Constrained Reinforcement Learning",
-      "authors": [
-        "Y. Wang",
-        "F. Miao",
-        "S. Zou"
-      ],
-      "venue": "Preprint, 2022",
-      "thumbnail": "",
-      "selected": 0,
-      "award": "",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2209.06866"
+        "pdf": "https://arxiv.org/pdf/2406.01762"
       }
     }
   ]
