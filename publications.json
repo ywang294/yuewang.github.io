@@ -16,7 +16,7 @@
       "selected": 1,
       "award": "",
       "topic": "Conference",
-      "links": { "pdf": "#" }
+      "links": { "pdf": "https://arxiv.org/abs/2602.02532" }
     },
     {
       "title": "Dynamic Automaton Refinement and Planning for Non-Markovian RL",
