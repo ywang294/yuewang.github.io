@@ -1,8 +1,6 @@
 // Global variables
 let allPublications = [];
-let showingSelected = true;
 
-// Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
   loadPublications();
   
@@ -10,11 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
   sections.forEach((section, index) => {
     section.style.animationDelay = `${index * 0.1}s`;
   });
-  
-  const toggleButton = document.getElementById('toggle-publications');
-  if (toggleButton) {
-    toggleButton.addEventListener('click', togglePublications);
-  }
 });
 
 function loadPublications() {
@@ -22,7 +15,8 @@ function loadPublications() {
     .then(response => response.json())
     .then(data => {
       allPublications = data.publications;
-      renderPublications(true);
+      // 页面加载时就渲染好，但容器是隐藏的
+      renderPublications();
     })
     .catch(error => {
       console.error('Error loading publications:', error);
@@ -30,44 +24,43 @@ function loadPublications() {
     });
 }
 
+// 修改后的切换逻辑：只控制展开和收起
 function togglePublications() {
-  showingSelected = !showingSelected;
-  renderPublications(showingSelected);
-  
-  const toggleButton = document.getElementById('toggle-publications');
-  toggleButton.textContent = showingSelected ? 'Show All' : 'Show Selected';
+  const content = document.getElementById('publications-content');
+  const icon = document.getElementById('toggle-icon');
+  const isHidden = content.style.display === "none";
+
+  if (isHidden) {
+    content.style.display = "block";
+    icon.style.transform = "rotate(90deg)"; // 箭头向下
+  } else {
+    content.style.display = "none";
+    icon.style.transform = "rotate(0deg)";  // 箭头向右
+  }
 }
 
-// Main rendering function that splits publications into categories
-function renderPublications(selectedOnly) {
-  // Define our containers
+function renderPublications() {
   const containers = {
     'Conference': document.getElementById('conference-container'),
     'Journal': document.getElementById('journal-container'),
     'Preprint': document.getElementById('preprint-container')
   };
 
-  // Clear all containers
   Object.values(containers).forEach(container => {
     if (container) container.innerHTML = '';
   });
 
-  // Filter based on "Selected" state if needed
-  const pubsToProcess = selectedOnly ? 
-    allPublications.filter(pub => pub.selected === 1) : 
-    allPublications;
-
-  // Sort and append to respective containers
-  pubsToProcess.forEach(publication => {
+  // 不再过滤 selected，直接展示所有
+  allPublications.forEach(publication => {
     const pubElement = createPublicationElement(publication);
-    const category = publication.topic; // This matches "Conference", "Journal", or "Preprint"
+    const category = publication.topic;
     
     if (containers[category]) {
       containers[category].appendChild(pubElement);
     }
   });
 
-  // Hide category headings if they are empty
+  // 隐藏没有内容的分类标题
   Object.keys(containers).forEach(key => {
     const heading = containers[key].previousElementSibling;
     if (containers[key].children.length === 0) {
@@ -115,7 +108,6 @@ function createPublicationElement(publication) {
   if (publication.links) {
     const links = document.createElement('div');
     links.className = 'pub-links';
-    
     Object.entries(publication.links).forEach(([type, url]) => {
       if (url && url !== "#") {
         const link = document.createElement('a');
