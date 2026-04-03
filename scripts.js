@@ -79,16 +79,6 @@ function createPublicationElement(publication) {
   const pubItem = document.createElement('div');
   pubItem.className = 'publication-item';
   
-  // Create thumbnail
-  const thumbnail = document.createElement('div');
-  thumbnail.className = 'pub-thumbnail';
-  thumbnail.onclick = () => openModal(publication.thumbnail);
-  
-  const thumbnailImg = document.createElement('img');
-  thumbnailImg.src = publication.thumbnail;
-  thumbnailImg.alt = `${publication.title} thumbnail`;
-  thumbnail.appendChild(thumbnailImg);
-  
   // Create content container
   const content = document.createElement('div');
   content.className = 'pub-content';
@@ -99,25 +89,10 @@ function createPublicationElement(publication) {
   title.textContent = publication.title;
   content.appendChild(title);
   
-  // Add authors with highlight
+  // Add authors (No highlight, pure text using array join)
   const authors = document.createElement('div');
   authors.className = 'pub-authors';
-  
-  // Format authors with highlighting
-  let authorsHTML = '';
-  publication.authors.forEach((author, index) => {
-    if (author.includes('Author 3')) { // TODO: Highlight specific author
-      authorsHTML += `<span class="highlight-name">${author}</span>`;
-    } else {
-      authorsHTML += author;
-    }
-    
-    if (index < publication.authors.length - 1) {
-      authorsHTML += ', ';
-    }
-  });
-  
-  authors.innerHTML = authorsHTML;
+  authors.textContent = publication.authors.join(', ');
   content.appendChild(authors);
   
   // Add venue with award if present
@@ -144,21 +119,21 @@ function createPublicationElement(publication) {
     const links = document.createElement('div');
     links.className = 'pub-links';
     
-    if (publication.links.pdf) {
+    if (publication.links.pdf && publication.links.pdf !== "#") {
       const pdfLink = document.createElement('a');
       pdfLink.href = publication.links.pdf;
       pdfLink.textContent = '[PDF]';
       links.appendChild(pdfLink);
     }
     
-    if (publication.links.code) {
+    if (publication.links.code && publication.links.code !== "#") {
       const codeLink = document.createElement('a');
       codeLink.href = publication.links.code;
       codeLink.textContent = '[Code]';
       links.appendChild(codeLink);
     }
     
-    if (publication.links.project) {
+    if (publication.links.project && publication.links.project !== "#") {
       const projectLink = document.createElement('a');
       projectLink.href = publication.links.project;
       projectLink.textContent = '[Project Page]';
@@ -168,8 +143,7 @@ function createPublicationElement(publication) {
     content.appendChild(links);
   }
   
-  // Assemble the publication item
-  pubItem.appendChild(thumbnail);
+  // Assemble the publication item (only content, no thumbnail)
   pubItem.appendChild(content);
   
   return pubItem;
