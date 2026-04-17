@@ -534,71 +534,64 @@ strong {
     border-bottom: 1px solid #005f73;
 }
 
-/* --- Navbar Styles --- */
+/* --- 导航栏容器：强制单行排列 --- */
 .navbar {
-    background-color: #333; /* 类似你截图中的深灰色 */
-    padding: 15px 0;
+    background-color: #333; /* 深灰色背景 */
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
+
 .nav-container {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* 名字在左，链接在右 */
+    align-items: center; /* 垂直居中 */
     padding: 0 20px;
 }
+
 .nav-logo {
     color: white;
     font-size: 1.4rem;
     font-weight: bold;
     text-decoration: none;
+    white-space: nowrap; /* 防止名字换行 */
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
+    padding: 0; /* 清除默认内边距 */
 }
+
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 30px; /* 增加链接之间的间距 */
 }
+
 .nav-links a {
     color: #ccc;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s;
-}
-.nav-links a:hover, .nav-links a.active {
-    color: white;
-    font-weight: 600;
+    white-space: nowrap; /* 防止链接文字换行 */
 }
 
-/* --- Layout Adjustments --- */
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    line-height: 1.6;
+.nav-links a:hover, .nav-links a.active {
+    color: white;
 }
-.page-header {
-    background-color: #f8f9fa;
-    padding: 60px 0;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+
+/* --- 移动端自适应：只有屏幕很窄时才换行 --- */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column; /* 手机端变成两行 */
+        gap: 10px;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
 }
-h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-top: 40px;
-}
-.pub-category-title {
-    margin-top: 30px;
-    color: #555;
-    border-left: 5px solid #333;
-    padding-left: 15px;
-}
-.member-list { list-style: none; padding: 0; }
-.member-list li { margin-bottom: 10px; }
+
 
