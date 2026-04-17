@@ -1,108 +1,236 @@
-/* 全局背景设为淡淡的灰色 */
-body {
-    background-color: #f4f7f6; 
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: #2c3e50;
+/* ==========================================================================
+   1. 全局变量与基础设置
+   ========================================================================== */
+:root {
+    --primary-color: #005f73;       /* 专业深青色 */
+    --accent-color: #0a9396;        /* 亮青色（用于日期和强调） */
+    --bg-body: #f4f7f6;            /* 浅灰色背景，用于衬托白色卡片 */
+    --bg-card: #ffffff;            /* 纯白卡片背景 */
+    --text-main: #2c3e50;          /* 主标题颜色 */
+    --text-muted: #6c757d;         /* 辅助文字颜色 */
+    --border-color: #eeeeee;       /* 边框颜色 */
+    --font-header: 'Merriweather', serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
 }
 
-/* 顶部导航 - 保持深色以增加对比度 */
-.navbar {
-    background-color: #343a40;
-    padding: 12px 0;
+* {
+    box-sizing: border-box;
 }
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    color: var(--text-main);
+    background-color: var(--bg-body);
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   2. 导航栏 (Navbar) - 透明、链接居中
+   ========================================================================== */
+.navbar {
+    background-color: transparent; 
+    padding: 25px 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 .nav-container {
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* 确保链接水平居中 */
+    align-items: center;
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
-.nav-links li { margin: 0 20px; }
-.nav-links a {
-    color: #adb5bd;
-    text-decoration: none;
-    font-weight: 500;
-}
-.nav-links a.active, .nav-links a:hover {
-    color: #fff;
+
+.nav-links li {
+    margin: 0 25px;
 }
 
-/* 响应式布局：左右分布 */
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* ==========================================================================
+   3. 核心布局 (Sidebar + Content Area)
+   ========================================================================== */
 .main-layout {
     display: flex;
-    max-width: 1200px;
-    margin: 40px auto;
-    gap: 30px;
-    padding: 0 20px;
+    width: 90%;
+    max-width: 1300px;
+    margin: 20px auto 60px;
+    gap: 40px; /* 侧边栏与内容区的间距 */
 }
 
-/* 左侧边栏 */
+/* 左侧固定边栏 */
 .sidebar {
     flex: 1;
-    min-width: 260px;
+    min-width: 280px;
 }
+
 .sidebar-card {
-    background: #fff;
+    background: var(--bg-card);
     border-radius: 12px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     position: sticky;
-    top: 80px; /* 随滚动固定 */
+    top: 40px; /* 随页面滚动固定 */
 }
+
 .avatar {
     width: 100%;
-    border-radius: 8px;
+    max-width: 220px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
-.sidebar-name { font-size: 1.5rem; margin: 0; font-family: 'Merriweather', serif; }
-.sidebar-name-zh { color: #6c757d; margin: 5px 0 15px; }
-.sidebar-title { font-weight: bold; margin-bottom: 5px; }
-.sidebar-affiliation { font-size: 0.9rem; color: #6c757d; margin-bottom: 20px; }
-.sidebar-links { border-top: 1px solid #eee; padding-top: 20px; }
-.email-link { text-decoration: none; color: #007bff; font-size: 0.9rem; }
-.social-icons { margin-top: 15px; font-size: 1.2rem; }
-.social-icons a { color: #333; margin: 0 10px; }
 
-/* 右侧内容区 */
+.sidebar-name { 
+    font-size: 1.8rem; /* 调整后的合适大小 */
+    margin: 0; 
+    font-family: var(--font-header); 
+}
+
+.sidebar-name-zh { 
+    color: var(--text-muted); 
+    font-size: 1.2rem;
+    margin: 5px 0 15px; 
+}
+
+.sidebar-title { 
+    font-weight: 600; 
+    margin-bottom: 5px; 
+    color: var(--text-main);
+}
+
+.sidebar-affiliation { 
+    font-size: 0.95rem; 
+    color: var(--text-muted); 
+    margin-bottom: 25px; 
+}
+
+.sidebar-links { 
+    border-top: 1px solid var(--border-color); 
+    padding-top: 20px; 
+}
+
+.email-link { 
+    text-decoration: none; 
+    color: var(--primary-color); 
+    font-weight: 500;
+    font-size: 0.95rem; 
+}
+
+.social-icons { 
+    margin-top: 15px; 
+    font-size: 1.3rem; 
+}
+
+.social-icons a { 
+    color: var(--text-main); 
+    margin: 0 10px; 
+    transition: color 0.3s;
+}
+
+.social-icons a:hover { color: var(--primary-color); }
+
+/* 右侧内容区域 */
 .content-area {
     flex: 3;
 }
 
-/* 卡片通用样式 */
+/* 通用卡片样式 */
 .card {
-    background: #fff;
+    background: var(--bg-card);
     border-radius: 12px;
-    padding: 35px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+
 .card h2 {
     margin-top: 0;
-    font-family: 'Merriweather', serif;
-    border-bottom: 2px solid #f4f7f6;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    font-family: var(--font-header);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-body);
+    padding-bottom: 12px;
+    margin-bottom: 25px;
 }
 
-/* 特定板块样式 */
+/* ==========================================================================
+   4. 特定内容美化 (News, Group, Pubs)
+   ========================================================================== */
+
+/* 新闻列表 */
 .news-list { list-style: none; padding: 0; }
-.news-list li { margin-bottom: 12px; display: flex; }
+.news-list li { 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: baseline;
+    font-size: 1.05rem;
+}
 .news-list .date {
     font-weight: bold;
-    color: #007bff;
-    min-width: 85px;
+    color: var(--accent-color);
+    min-width: 90px;
+    font-size: 0.95rem;
 }
-.warning { color: #d9534f; margin-top: 15px; }
 
-/* 手机端适配：变为上下排列 */
+/* 论文条目 (配合 scripts.js) */
+.publication-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+.publication-item:last-child { border-bottom: none; }
+.pub-title { font-weight: 600; color: var(--text-main); font-size: 1.1rem; }
+.pub-authors { color: var(--text-muted); font-size: 0.95rem; }
+.pub-venue { color: var(--primary-color); font-style: italic; font-size: 0.95rem; }
+
+/* 课题组成员 */
+.group-section { margin-top: 35px; }
+.group-type-title { font-family: var(--font-header); color: var(--primary-color); border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 15px; }
+.member-list { list-style: none; padding: 0; }
+.member-list li { padding: 10px 0; font-size: 1.1rem; }
+.member-year { float: right; color: var(--text-muted); font-size: 0.9rem; }
+
+/* 链接通用样式 */
+a { color: var(--primary-color); text-decoration: none; transition: 0.3s; }
+a:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   5. 响应式布局 (适配手机)
+   ========================================================================== */
 @media (max-width: 992px) {
-    .main-layout { flex-direction: column; }
-    .sidebar-card { position: static; }
+    .main-layout { flex-direction: column; width: 95%; }
+    .sidebar-card { position: static; width: 100%; }
+    .content-area { width: 100%; }
+    .member-year { float: none; display: block; margin-top: 4px; }
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-muted);
 }
