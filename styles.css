@@ -535,53 +535,52 @@ strong {
 }
 
 /* --- 导航栏容器：强制单行排列 --- */
+/* --- 导航栏：改为透明 --- */
 .navbar {
-    background-color: #333; /* 深灰色背景 */
-    padding: 10px 0;
-    position: sticky;
+    background-color: transparent; /* 变成透明 */
+    padding: 20px 0;
+    position: relative; /* 如果不需要固定在顶部，使用 relative；如果需要固定，使用 sticky */
+    width: 100%;
     top: 0;
     z-index: 1000;
+    border-bottom: none; /* 移除底部线条，确保完全透明感 */
 }
 
 .nav-container {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* 名字在左，链接在右 */
-    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 保持链接居中 */
+    align-items: center;
     padding: 0 20px;
-}
-
-.nav-logo {
-    color: white;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-decoration: none;
-    white-space: nowrap; /* 防止名字换行 */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0; /* 清除默认内边距 */
+    padding: 0;
 }
 
 .nav-links li {
-    margin-left: 30px; /* 增加链接之间的间距 */
+    margin: 0 25px;
 }
 
+/* --- 链接文字：改为深色以便在透明背景下显示 --- */
 .nav-links a {
-    color: #ccc;
+    color: #333; /* 改为深灰色或黑色 */
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     transition: color 0.3s;
-    white-space: nowrap; /* 防止链接文字换行 */
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: white;
+    color: #000; /* 悬停时加深 */
+    border-bottom: 2px solid #333; 
+    padding-bottom: 5px;
 }
+
 
 /* --- 移动端自适应：只有屏幕很窄时才换行 --- */
 @media (max-width: 600px) {
