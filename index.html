@@ -4,72 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yue Wang - Home</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-light">
+
     <nav class="navbar">
-    <div class="nav-container">
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="group.html">Group</a></li>
-        </ul>
-    </div>
-</nav>
-
-
-    <header class="page-header">
-        <div class="header-content-simple">
-            <h1>Yue Wang (王越)</h1>
-            <p>Assistant Professor • University of Central Florida</p>
-            <div class="social-links">
-                <a href="https://scholar.google.com/citations?user=ndMi_z8AAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                <a href="mailto:yue.wang@ucf.edu"><i class="fas fa-envelope"></i> Email</a>
-            </div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="group.html">Group</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <main class="container">
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am an Assistant Professor in the <a href="https://www.ece.ucf.edu/" target="_blank">Department of Electrical and Computer Engineering</a> (jointly appointed with the <a href="https://cs.ucf.edu/" target="_blank">Computer Science Department</a>) at the <a href="https://www.ucf.edu/" target="_blank">University of Central Florida (UCF)</a>. I am also affiliated with the <a href="https://ai.ucf.edu/" target="_blank">Artificial Intelligence Institute</a>.</p>
-        <p>I received my Ph.D. in Electrical Engineering from The State University of New York at Buffalo in 2023, under the advisement of Prof. Shaofeng Zou, and my B.S. in Mathematics from Nanjing University in 2019.</p>
-    </section>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <img src="avatar.jpg" alt="Yue Wang" class="avatar">
+                <h1 class="sidebar-name">Yue Wang</h1>
+                <p class="sidebar-name-zh">王越</p>
+                <p class="sidebar-title">Assistant Professor</p>
+                <p class="sidebar-affiliation">University of Central Florida</p>
+                
+                <div class="sidebar-links">
+                    <a href="mailto:yue.wang@ucf.edu" class="email-link">
+                        <i class="fas fa-envelope"></i> yue.wang@ucf.edu
+                    </a>
+                    <div class="social-icons">
+                        <a href="https://scholar.google.com/citations?user=ndMi_z8AAAAJ" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                </div>
+            </div>
+        </aside>
 
-    <section id="research">
-        <h2>Research Interests</h2>
-        <p>My research focuses on machine learning, with a primary focus on:</p>
-        <ul class="interest-list">
-            <li>Theoretical and algorithmic foundations of reinforcement learning</li>
-            <li>Game theory and multi-agent systems</li>
-            <li>Alignment and large language models</li>
-            <li>Robotics</li>
-        </ul>
-    </section>
+        <div class="content-area">
+            
+            <section class="card">
+                <h2>About Me</h2>
+                <p>I am an Assistant Professor in the <a href="https://www.ece.ucf.edu/" target="_blank">Department of Electrical and Computer Engineering</a> (jointly appointed with the <a href="https://cs.ucf.edu/" target="_blank">Computer Science Department</a>) at the <a href="https://www.ucf.edu/" target="_blank">University of Central Florida (UCF)</a>. I am also affiliated with the <a href="https://ai.ucf.edu/" target="_blank">Artificial Intelligence Institute</a>.</p>
+                <p>I received my Ph.D. in Electrical Engineering from The State University of New York at Buffalo in 2023, under the advisement of Prof. Shaofeng Zou, and my B.S. in Mathematics from Nanjing University in 2019.</p>
+            </section>
 
-    <section id='students'>
-        <h2>Prospective Students</h2>
-        <p>I am looking for highly motivated Ph.D. students with strong backgrounds in mathematics, statistics, computer science, or electrical engineering. If you have a solid foundation in mathematical concepts and are interested in working with me, please send me an email with your CV and transcripts. </p>
-        <p>Students at UCF are encouraged to contact me for research opportunities/(honor) thesis, if you are interested in my work.</p>
-        <p>Students whom I have never met before, DO NOT cold email me about getting you a grader/TA job ( I will not respond). Please ping the department.
-</p>
-</section>
+            <section class="card">
+                <h2>Research Interests</h2>
+                <ul class="interest-list">
+                    <li>Theoretical and algorithmic foundations of reinforcement learning</li>
+                    <li>Game theory and multi-agent systems</li>
+                    <li>Alignment and large language models</li>
+                    <li>Robotics</li>
+                </ul>
+            </section>
 
+            <section class="card alert-card">
+                <h2>Prospective Students</h2>
+                <p>I am looking for highly motivated Ph.D. students with strong backgrounds in mathematics, statistics, computer science, or electrical engineering. If you have a solid foundation in mathematical concepts and are interested in working with me, please send me an email with your CV and transcripts.</p>
+                <p class="note">UCF students are encouraged to contact me for research opportunities/thesis.</p>
+                <p class="warning"><strong>Note:</strong> DO NOT cold email me about grader/TA jobs. Please contact the department directly.</p>
+            </section>
 
-    <section id="news">
-        <h2>News</h2>
-        <ul class="news-list">
-            <li><span class="news-date">[2026.04]</span> Zain and Debamita's paper is accepted by <strong>ICLR 2026</strong>.</li>
-            <li><span class="news-date">[2026.03]</span> Papers are accepted by <strong>AISTATS 2026 and ICASSP 2026</strong>.</li>
-            <li><span class="news-date">[2026.02]</span> Two papers are accepted by <strong>AAAI 2026</strong> (one selected as Oral).</li>
-            <li><span class="news-date">[2026.01]</span> Paper on LLM fine-tuning is accepted by <strong>AAMAS 2026</strong> as an extended abstract.</li>
-        </ul>
-    </section>
-</main>
+            <section class="card">
+                <h2>News</h2>
+                <ul class="news-list">
+                    <li><span class="date">2026.04</span> Zain and Debamita's paper is accepted by <strong>ICLR 2026</strong>.</li>
+                    <li><span class="date">2026.03</span> Papers accepted by <strong>AISTATS 2026 and ICASSP 2026</strong>.</li>
+                    <li><span class="date">2026.02</span> Two papers accepted by <strong>AAAI 2026</strong> (one Oral).</li>
+                    <li><span class="date">2026.01</span> Paper accepted by <strong>AAMAS 2026</strong>.</li>
+                </ul>
+            </section>
 
+        </div>
+    </div>
 
+    <footer>
+        <p>&copy; 2026 Yue Wang</p>
+    </footer>
 
 </body>
 </html>
