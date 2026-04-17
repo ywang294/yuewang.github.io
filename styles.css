@@ -1,155 +1,108 @@
-:root {
-    --primary-color: #005f73;
-    --accent-color: #0a9396;
-    --bg-light: #f8f9fa;
-    --text-main: #2c3e50;
-    --border-color: #e9ecef;
-}
-
+/* 全局背景设为淡淡的灰色 */
 body {
-    font-family: 'Merriweather', serif;
+    background-color: #f4f7f6; 
     margin: 0;
-    padding: 0;
-    color: var(--text-main);
-    background-color: #fff;
-    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+    color: #2c3e50;
 }
 
-/* --- 导航栏 --- */
+/* 顶部导航 - 保持深色以增加对比度 */
 .navbar {
-    background-color: #fff;
-    padding: 15px 0;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: #343a40;
+    padding: 12px 0;
 }
-
 .nav-container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
-
-.nav-links li { margin: 0 25px; }
-
+.nav-links li { margin: 0 20px; }
 .nav-links a {
-    color: #666;
+    color: #adb5bd;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: all 0.3s;
+    font-weight: 500;
 }
-
-.nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
-
-/* --- Header：缩小名字大小 --- */
-.page-header {
-    width: 100%;
-    background-color: var(--bg-light);
-    padding: 40px 0; /* 缩小了上下内边距 */
-    border-bottom: 1px solid var(--border-color);
-}
-
-.header-content-simple {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header-content-simple h1 {
-    font-size: 2.2rem; /* 从 3rem 缩小到 2.2rem */
-    margin: 0 0 8px 0;
-    color: var(--primary-color);
-}
-
-.header-content-simple p {
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.social-links { margin-top: 20px; }
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 14px;
-    background: #fff;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    margin-right: 12px;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-}
-
-.social-links a:hover {
-    background: var(--primary-color);
+.nav-links a.active, .nav-links a:hover {
     color: #fff;
 }
 
-/* --- 内容容器 --- */
-.container {
-    width: 90%;
+/* 响应式布局：左右分布 */
+.main-layout {
+    display: flex;
     max-width: 1200px;
     margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
 }
 
-section { margin-bottom: 45px; }
+/* 左侧边栏 */
+.sidebar {
+    flex: 1;
+    min-width: 260px;
+}
+.sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 80px; /* 随滚动固定 */
+}
+.avatar {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.sidebar-name { font-size: 1.5rem; margin: 0; font-family: 'Merriweather', serif; }
+.sidebar-name-zh { color: #6c757d; margin: 5px 0 15px; }
+.sidebar-title { font-weight: bold; margin-bottom: 5px; }
+.sidebar-affiliation { font-size: 0.9rem; color: #6c757d; margin-bottom: 20px; }
+.sidebar-links { border-top: 1px solid #eee; padding-top: 20px; }
+.email-link { text-decoration: none; color: #007bff; font-size: 0.9rem; }
+.social-icons { margin-top: 15px; font-size: 1.2rem; }
+.social-icons a { color: #333; margin: 0 10px; }
 
-h2 {
-    font-size: 1.6rem;
-    color: var(--primary-color);
-    border-left: 4px solid var(--primary-color);
-    padding-left: 15px;
+/* 右侧内容区 */
+.content-area {
+    flex: 3;
+}
+
+/* 卡片通用样式 */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.card h2 {
+    margin-top: 0;
+    font-family: 'Merriweather', serif;
+    border-bottom: 2px solid #f4f7f6;
+    padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-/* --- Research Interest 列表 --- */
-.interest-list {
-    padding-left: 20px;
-    list-style-type: square;
-}
-
-.interest-list li { margin-bottom: 10px; }
-
-/* --- News 列表 --- */
-.news-list {
-    list-style: none;
-    padding: 0;
-}
-
-.news-list li {
-    padding: 12px 18px;
-    margin-bottom: 10px;
-    background: #fff;
-    border-radius: 6px;
-    border-left: 3px solid var(--accent-color);
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.03);
-}
-
-.news-date {
+/* 特定板块样式 */
+.news-list { list-style: none; padding: 0; }
+.news-list li { margin-bottom: 12px; display: flex; }
+.news-list .date {
     font-weight: bold;
-    color: var(--accent-color);
-    margin-right: 10px;
+    color: #007bff;
+    min-width: 85px;
 }
+.warning { color: #d9534f; margin-top: 15px; }
 
-a { color: var(--primary-color); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-@media (max-width: 768px) {
-    .container { width: 95%; }
-    .header-content-simple h1 { font-size: 1.8rem; }
+/* 手机端适配：变为上下排列 */
+@media (max-width: 992px) {
+    .main-layout { flex-direction: column; }
+    .sidebar-card { position: static; }
 }
