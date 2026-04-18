@@ -238,58 +238,68 @@ footer {
     color: var(--text-muted);
 }
 
-/* 1. 修复 News 列表在手机端的重叠 */
-.news-list li { 
-    margin-bottom: 15px; 
-    display: flex; 
-    flex-direction: row; /* 默认横向 */
-    align-items: flex-start;
-    font-size: 1.05rem;
-    gap: 15px; /* 使用 gap 代替 min-width 更加灵活 */
-}
-
-/* 2. 核心修复：针对手机端的媒体查询 */
-@media (max-width: 600px) {
-    /* 缩小整体边距 */
-    .main-layout, .container, .nav-container, .header-content-simple {
-        width: 92%;
-        padding: 0 15px;
-        gap: 20px;
+/* ==========================================================================
+   手机端深度适配 (针对 600px 以下屏幕)
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+    /* 1. 强制主布局变为单列，取消左右间距 */
+    .main-layout {
+        display: block !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 0 10px !important;
     }
 
-    /* 标题进一步缩小，适合手机屏幕 */
-    .card h2 {
-        font-size: 1.2rem; 
-        margin-bottom: 15px;
-    }
-
-    .sidebar-name {
-        font-size: 1.3rem;
-    }
-
-    /* 修复 News 重叠：在手机上让日期排在文字上方 */
+    /* 2. 彻底解决 News 重叠问题 */
     .news-list li {
-        flex-direction: column; /* 纵向排列 */
-        gap: 5px;
-        border-bottom: 1px solid #eee; /* 手机端加个分割线更清晰 */
-        padding-bottom: 10px;
+        display: block !important; /* 强制换行，不再并排 */
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+        background: #fdfdfd !important;
     }
 
+    /* 日期变成一行独立的小标签 */
     .news-list .date {
-        min-width: auto; /* 取消固定宽度 */
-        font-size: 0.85rem;
-        background: #eef2f3;
-        padding: 2px 8px;
-        border-radius: 4px;
-        display: inline-block;
+        display: block !important;
+        width: fit-content !important;
+        min-width: 0 !important; /* 取消之前的宽度限制 */
+        margin-bottom: 8px !important;
+        background-color: var(--primary-color) !important;
+        color: white !important;
+        padding: 2px 8px !important;
+        font-size: 0.8rem !important;
+        border-radius: 4px !important;
     }
-    
-    /* 导航栏链接间距调小 */
+
+    /* 3. 缩小所有卡片的内边距，让出空间给文字 */
+    .card {
+        padding: 20px !important;
+        margin-bottom: 15px !important;
+        border-radius: 8px !important;
+    }
+
+    /* 4. 调整导航栏，防止三个词太挤 */
     .nav-links li {
-        margin: 0 10px;
+        margin: 0 8px !important;
     }
     
     .nav-links a {
-        font-size: 0.95rem;
+        font-size: 0.9rem !important;
+    }
+
+    /* 5. 缩小标题字体，防止长单词撑破屏幕 */
+    .card h2 {
+        font-size: 1.1rem !important;
+    }
+
+    /* 6. 侧边栏在手机上不要固定，直接排在最上面 */
+    .sidebar {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .sidebar-card {
+        position: static !important;
+        padding: 20px !important;
     }
 }
