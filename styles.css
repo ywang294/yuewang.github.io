@@ -1,94 +1,60 @@
-/* ==========================================================================
-   1. 全局变量与基础设置
-   ========================================================================== */
 :root {
-    --primary-color: #005f73;       /* 专业深青色 */
-    --accent-color: #0a9396;        /* 亮青色（用于日期和强调） */
-    --bg-body: #f4f7f6;            /* 浅灰色背景，用于衬托白色卡片 */
-    --bg-card: #ffffff;            /* 纯白卡片背景 */
-    --text-main: #2c3e50;          /* 主标题颜色 */
-    --text-muted: #6c757d;         /* 辅助文字颜色 */
-    --border-color: #eeeeee;       /* 边框颜色 */
+    --primary-color: #005f73;
+    --accent-color: #0a9396;
+    --bg-body: #f4f7f6;
+    --bg-card: #ffffff;
+    --text-main: #2c3e50;
+    --text-muted: #6c757d;
     --font-header: 'Merriweather', serif;
-    --font-body: 'Inter', -apple-system, sans-serif;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-body);
-    margin: 0;
-    padding: 0;
-    color: var(--text-main);
     background-color: var(--bg-body);
-    line-height: 1.7;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
 }
 
-/* ==========================================================================
-   2. 导航栏 (Navbar) - 透明、链接居中
-   ========================================================================== */
+/* 导航栏 */
 .navbar {
-    background-color: transparent; 
+    background-color: transparent;
     padding: 25px 0;
-    width: 100%;
-    z-index: 1000;
 }
-
 .nav-container {
     width: 90%;
     max-width: 1300px;
     margin: 0 auto;
     display: flex;
-    justify-content: center; /* 确保链接水平居中 */
-    align-items: center;
+    justify-content: center;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
 }
-
-.nav-links li {
-    margin: 0 25px;
-}
-
+.nav-links li { margin: 0 25px; }
 .nav-links a {
     color: #444;
     text-decoration: none;
-    font-size: 1.05rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s;
 }
+.nav-links a.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
 
-.nav-links a:hover, 
-.nav-links a.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-/* ==========================================================================
-   3. 核心布局 (Sidebar + Content Area)
-   ========================================================================== */
+/* 主布局 - 百分比宽度 */
 .main-layout {
     display: flex;
     width: 90%;
     max-width: 1300px;
     margin: 20px auto 60px;
-    gap: 40px; /* 侧边栏与内容区的间距 */
+    gap: 40px;
 }
 
-/* 左侧固定边栏 */
+/* 左侧边栏照片样式 */
 .sidebar {
     flex: 1;
     min-width: 280px;
 }
-
 .sidebar-card {
     background: var(--bg-card);
     border-radius: 12px;
@@ -96,71 +62,22 @@ body {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     position: sticky;
-    top: 40px; /* 随页面滚动固定 */
+    top: 40px;
 }
-
-.avatar {
+.profile-img {
     width: 100%;
     max-width: 220px;
-    border-radius: 10px;
+    border-radius: 10px; /* 圆角增加干净感 */
     margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
+.sidebar-name { font-size: 1.4rem; margin: 0; font-family: var(--font-header); }
+.sidebar-name-zh { color: var(--text-muted); margin: 5px 0 15px; }
 
-.sidebar-name { 
-    font-size: 1.8rem; /* 调整后的合适大小 */
-    margin: 0; 
-    font-family: var(--font-header); 
-}
-
-.sidebar-name-zh { 
-    color: var(--text-muted); 
-    font-size: 1.2rem;
-    margin: 5px 0 15px; 
-}
-
-.sidebar-title { 
-    font-weight: 600; 
-    margin-bottom: 5px; 
-    color: var(--text-main);
-}
-
-.sidebar-affiliation { 
-    font-size: 0.95rem; 
-    color: var(--text-muted); 
-    margin-bottom: 25px; 
-}
-
-.sidebar-links { 
-    border-top: 1px solid var(--border-color); 
-    padding-top: 20px; 
-}
-
-.email-link { 
-    text-decoration: none; 
-    color: var(--primary-color); 
-    font-weight: 500;
-    font-size: 0.95rem; 
-}
-
-.social-icons { 
-    margin-top: 15px; 
-    font-size: 1.3rem; 
-}
-
-.social-icons a { 
-    color: var(--text-main); 
-    margin: 0 10px; 
-    transition: color 0.3s;
-}
-
-.social-icons a:hover { color: var(--primary-color); }
-
-/* 右侧内容区域 */
+/* 右侧卡片区域 */
 .content-area {
     flex: 3;
 }
-
-/* 通用卡片样式 */
 .card {
     background: var(--bg-card);
     border-radius: 12px;
@@ -171,135 +88,22 @@ body {
 .card h2 {
     margin-top: 0;
     font-family: var(--font-header);
-    /* 缩小字号 */
-    font-size: 1.4rem; 
-    /* 稍微降低一点粗细，看起来更优雅 */
-    font-weight: 600; 
+    font-size: 1.3rem; /* 缩小了标题 */
     color: var(--primary-color);
     border-bottom: 2px solid var(--bg-body);
     padding-bottom: 10px;
-    margin-bottom: 20px;
-    /* 增加一点字母间距 */
-    letter-spacing: 0.5px; 
 }
-/* ==========================================================================
-   4. 特定内容美化 (News, Group, Pubs)
-   ========================================================================== */
 
-/* 新闻列表 */
+/* News 列表修复 */
 .news-list { list-style: none; padding: 0; }
-.news-list li { 
-    margin-bottom: 15px; 
-    display: flex; 
-    align-items: baseline;
-    font-size: 1.05rem;
-}
-.news-list .date {
-    font-weight: bold;
-    color: var(--accent-color);
-    min-width: 90px;
-    font-size: 0.95rem;
-}
+.news-list li { display: flex; gap: 15px; margin-bottom: 12px; align-items: baseline; }
+.news-list .date { color: var(--accent-color); font-weight: bold; min-width: 85px; }
 
-/* 论文条目 (配合 scripts.js) */
-.publication-item {
-    padding: 18px 0;
-    border-bottom: 1px solid #f8f9fa;
-}
-.publication-item:last-child { border-bottom: none; }
-.pub-title { font-weight: 600; color: var(--text-main); font-size: 1.1rem; }
-.pub-authors { color: var(--text-muted); font-size: 0.95rem; }
-.pub-venue { color: var(--primary-color); font-style: italic; font-size: 0.95rem; }
-
-/* 课题组成员 */
-.group-section { margin-top: 35px; }
-.group-type-title { font-family: var(--font-header); color: var(--primary-color); border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 15px; }
-.member-list { list-style: none; padding: 0; }
-.member-list li { padding: 10px 0; font-size: 1.1rem; }
-.member-year { float: right; color: var(--text-muted); font-size: 0.9rem; }
-
-/* 链接通用样式 */
-a { color: var(--primary-color); text-decoration: none; transition: 0.3s; }
-a:hover { text-decoration: underline; }
-
-/* ==========================================================================
-   5. 响应式布局 (适配手机)
-   ========================================================================== */
+/* 响应式：手机端自动变单列 */
 @media (max-width: 992px) {
     .main-layout { flex-direction: column; width: 95%; }
-    .sidebar-card { position: static; width: 100%; }
-    .content-area { width: 100%; }
-    .member-year { float: none; display: block; margin-top: 4px; }
+    .sidebar-card { position: static; }
+    .news-list li { flex-direction: column; gap: 5px; }
 }
 
-footer {
-    text-align: center;
-    padding: 40px 0;
-    color: var(--text-muted);
-}
-
-/* ==========================================================================
-   手机端深度适配 (针对 600px 以下屏幕)
-   ========================================================================== */
-@media screen and (max-width: 600px) {
-    /* 1. 强制主布局变为单列，取消左右间距 */
-    .main-layout {
-        display: block !important;
-        width: 100% !important;
-        margin: 10px 0 !important;
-        padding: 0 10px !important;
-    }
-
-    /* 2. 彻底解决 News 重叠问题 */
-    .news-list li {
-        display: block !important; /* 强制换行，不再并排 */
-        margin-bottom: 20px !important;
-        padding: 10px !important;
-        background: #fdfdfd !important;
-    }
-
-    /* 日期变成一行独立的小标签 */
-    .news-list .date {
-        display: block !important;
-        width: fit-content !important;
-        min-width: 0 !important; /* 取消之前的宽度限制 */
-        margin-bottom: 8px !important;
-        background-color: var(--primary-color) !important;
-        color: white !important;
-        padding: 2px 8px !important;
-        font-size: 0.8rem !important;
-        border-radius: 4px !important;
-    }
-
-    /* 3. 缩小所有卡片的内边距，让出空间给文字 */
-    .card {
-        padding: 20px !important;
-        margin-bottom: 15px !important;
-        border-radius: 8px !important;
-    }
-
-    /* 4. 调整导航栏，防止三个词太挤 */
-    .nav-links li {
-        margin: 0 8px !important;
-    }
-    
-    .nav-links a {
-        font-size: 0.9rem !important;
-    }
-
-    /* 5. 缩小标题字体，防止长单词撑破屏幕 */
-    .card h2 {
-        font-size: 1.1rem !important;
-    }
-
-    /* 6. 侧边栏在手机上不要固定，直接排在最上面 */
-    .sidebar {
-        width: 100% !important;
-        margin-bottom: 20px !important;
-    }
-    
-    .sidebar-card {
-        position: static !important;
-        padding: 20px !important;
-    }
-}
+footer { text-align: center; padding: 40px 0; color: var(--text-muted); }
