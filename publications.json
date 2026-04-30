@@ -147,10 +147,10 @@
     {
       "title": "Scaling Online Distributionally Robust Reinforcement Learning: Sample-Efficient Guarantees with General Function Approximation",
       "authors": ["Debamita Ghosh", "George K. Atia", "Yue Wang"],
-      "venue": "Preprint, 2025",
+      "venue": "International Conference on Machine Learning (ICML), 2026",
       "selected": 1,
       "award": "",
-      "topic": "Preprint",
+      "topic": "conference",
       "links": { "pdf": "https://arxiv.org/abs/2512.18957" }
     },
     {
@@ -174,19 +174,19 @@
     {
       "title": "Distributionally Robust Markov Games with Average Reward",
       "authors": ["Zachary Roch", "Yue Wang"],
-      "venue": "Preprint, 2025",
+      "venue": "International Conference on Machine Learning (ICML), 2026",
       "selected": 1,
       "award": "",
-      "topic": "Preprint",
+      "topic": "conference",
       "links": { "pdf": "https://arxiv.org/abs/2508.03136" }
     },
     {
       "title": "A Finite-Sample Analysis of Distributionally Robust Average-Reward Reinforcement Learning",
       "authors": ["Z. Roch", "C. Zhang", "G. Atia", "Y. Wang"],
-      "venue": "Preprint, 2025",
+      "venue": "International Conference on Machine Learning (ICML), 2026",
       "selected": 1,
       "award": "",
-      "topic": "Preprint",
+      "topic": "conference",
       "links": { "pdf": "https://arxiv.org/abs/2505.12462" }
     },
     {
