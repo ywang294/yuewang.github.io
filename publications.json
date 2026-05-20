@@ -27,6 +27,15 @@
       "topic": "Conference",
       "links": { "pdf": "https://arxiv.org/abs/2505.12462" }
     },
+      {
+      "title": "Beyond Buffer Limits: Energy-Based Data Reassembly for Continual Learning",
+      "authors": ["Zhenyi Wang", "Yixuan Sun", "Yue Wang", "Zhong Chen", "Heng Huang"],
+      "venue": "International Conference on Machine Learning (ICML), 2026",
+      "selected": 1,
+      "award": "",
+      "topic": "Conference",
+      "links": { "pdf": "#"  }
+    },
     {
       "title": "Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interactions",
       "authors": ["Zain Ulabedeen Farhat*", "Debamita Ghosh*", "George K. Atia", "Yue Wang"],
